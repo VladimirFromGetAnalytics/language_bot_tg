@@ -9,12 +9,17 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.storage.memory import MemoryStorage
 import asyncio
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Placeholders for your tokens
-TELEGRAM_BOT_TOKEN = '8063605899:AAGiM43C1VDfhho6jZFLeEunuXPnrYS2VlA'
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+OPEN_API_TOKEN = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(
-    api_key="sk-aitunnel-xXxk6vVkEc5sIoGEequsErWeet1zxYFZ",
+    api_key= OPEN_API_TOKEN ,
     base_url="https://api.aitunnel.ru/v1/",
 )
 
